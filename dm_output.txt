@@ -1,0 +1,585 @@
+sakshamgupta@Jawahars-MacBook-Air-2 csv4 % python3 dm.py
+======================================================================
+SECTION 1: DATA LOADING & PREPROCESSING
+======================================================================
+Raw dataset shape: (39251, 123)
+After default_flag filter: (6080, 123)
+
+Features selected (17):
+  pl_rade
+  pl_bmasse
+  pl_dens
+  pl_eqt
+  pl_insol
+  pl_orbsmax
+  pl_orbper
+  pl_orbeccen
+  pl_trandur
+  pl_ratdor
+  pl_ratror
+  st_teff
+  st_rad
+  st_mass
+  st_met
+  st_lum
+  st_logg
+
+Missing values per feature (before imputation):
+pl_insol       5180
+pl_dens        4932
+st_lum         4633
+pl_ratdor      4509
+pl_eqt         4424
+pl_orbeccen    3516
+pl_ratror      3147
+pl_bmasse      3100
+pl_trandur     2851
+pl_orbsmax     2299
+st_met         1786
+pl_rade        1551
+st_logg        1058
+st_rad          791
+st_mass         766
+st_teff         707
+pl_orbper       341
+
+After dropping rows missing ['pl_rade']: (4529, 18)
+
+Applying KNN Imputation...
+Remaining NaNs after KNN imputation: 0
+Final usable rows: 4529
+
+Target planets present after preprocessing: 20/20
+  Found: ['LP 890-9 c', 'Gliese 12 b', 'K2-3 d', 'Kepler-1652 b', 'Kepler-1649 c', 'TOI-2095 c', 'Kepler-1653 b', 'TOI-715 b', 'K2-133 e', 'TOI-6002 b', 'TOI-7166 b', 'TOI-4336 A b', 'K2-9 b', 'TOI-1452 b', 'TOI-712 d', 'LHS 1140 b', 'Kepler-1052 c', 'Kepler-22 b', 'Kepler-452 b', 'Kepler-186 f']
+
+Descriptive Statistics:
+        pl_rade  pl_bmasse   pl_dens    pl_eqt   pl_insol  pl_orbsmax    pl_orbper  pl_orbeccen  pl_trandur  pl_ratdor  pl_ratror    st_teff    st_rad   st_mass    st_met    st_lum   st_logg
+count  4529.000   4529.000  4529.000  4529.000   4529.000    4529.000     4529.000     4529.000    4529.000   4529.000   4529.000   4529.000  4529.000  4529.000  4529.000  4529.000  4529.000
+mean      4.451    162.232     6.703  1012.395    495.302       3.010     3807.884        0.087       3.839     24.001      0.042   5408.561     1.010     0.932     0.008    -0.212     4.452
+std       4.962    593.836    40.342   379.729    994.199      48.146   150235.937        0.094       2.338     22.899      0.114    960.504     0.427     0.264     0.162     0.618     0.247
+min       0.310      0.070     0.030   124.700      0.144       0.006        0.112        0.000       0.133      0.838      0.005    575.000     0.012     0.015    -0.950    -3.257     2.953
+25%       1.620      7.512     1.890   747.376     74.715       0.054        3.833        0.024       2.393     12.692      0.019   5043.000     0.770     0.800    -0.070    -0.462     4.320
+50%       2.430     13.600     3.721   954.126    235.575       0.091        8.205        0.068       3.363     20.120      0.025   5599.000     0.938     0.937     0.010    -0.125     4.472
+75%       4.055     36.772     5.400  1226.800    673.282       0.145       19.656        0.116       4.659     28.876      0.043   5926.000     1.186     1.066     0.090     0.170     4.580
+max      87.206   9375.938  2000.000  4050.000  44900.000    2000.000  8040000.000        0.941      53.600    576.700      7.280  27730.000     6.300     2.780     0.560     1.724     8.070
+2026-04-12 23:47:12.293 Python[34738:10350099] WARNING: Secure coding is automatically enabled for restorable state! However, not on all supported macOS versions of this application. Opt-in to secure coding explicitly by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState:.
+  -> Plot 1 saved: Correlation Heatmap
+
+======================================================================
+SECTION 2: EXPLORATORY DATA VISUALIZATION
+======================================================================
+  -> Plot 2 saved: Missing Value Bar Chart
+  -> Plot 3 saved: Feature Distributions
+  -> Plot 4 saved: Pairplot (core 5 features)
+  -> Plot 5 saved: Box Plots
+  -> Plot 6 saved: Radius vs Temperature
+  -> Plot 6B saved: Radius vs Insolation
+  -> Plot 6C saved: Temperature vs Insolation
+  -> Plot 7 saved: Discovery Method Distribution
+  -> Plot 8 saved: Discovery Year Histogram
+
+======================================================================
+SECTION 3: SCALING & PREPROCESSING
+======================================================================
+Scaled feature matrix shape: (4529, 17)
+
+======================================================================
+SECTION 4: K-MEANS CLUSTERING
+======================================================================
+Extreme outliers removed before clustering (|z|>4.5): 207
+  Extreme planets set aside:
+    - 2MASS J02192210-3925225 b
+    - BD+60 1417 b
+    - BD-14 3065 b
+    - CD-35 2722 b
+    - CFHTWIR-Oph 98 b
+    - COCONUTS-2 b
+    - CT Cha b
+    - CoRoT-10 b
+    - CoRoT-27 b
+    - CoRoT-3 b
+    - EPIC 248847494 b
+    - GPX-1 b
+    - GQ Lup b
+    - GU Psc b
+    - HAT-P-14 b
+    - HAT-P-21 b
+    - HAT-P-41 b
+    - HAT-P-49 b
+    - HAT-P-57 b
+    - HATS-27 b
+    - HATS-41 b
+    - HATS-46 b
+    - HATS-50 b
+    - HATS-69 b
+    - HATS-70 b
+    - HD 100546 b
+    - HD 135344 A b
+    - HD 17156 b
+    - HD 203030 b
+    - HD 206893 b
+    - HD 206893 c
+    - HD 221416 b
+    - HD 56414 b
+    - HD 80606 b
+    - HD 80653 b
+    - HIP 65426 b
+    - HN Peg b
+    - HR 8799 c
+    - HR 8799 d
+    - HR 8799 e
+    - K2-11 b
+    - K2-132 b
+    - K2-157 b
+    - K2-161 b
+    - K2-277 b
+    - K2-344 b
+    - K2-371 b
+    - K2-39 b
+    - K2-97 b
+    - KELT-1 b
+    - KELT-9 b
+    - KIC 10525077 b
+    - KIC 3558849 b
+    - KIC 5437945 b
+    - KIC 9663113 b
+    - KOI-1257 b
+    - KOI-13 b
+    - KOI-2513.01
+    - KOI-55 b
+    - KOI-55 c
+    - Kepler-1004 b
+    - Kepler-1069 b
+    - Kepler-108 c
+    - Kepler-111 c
+    - Kepler-1126 c
+    - Kepler-115 c
+    - Kepler-122 b
+    - Kepler-122 d
+    - Kepler-122 e
+    - Kepler-1270 b
+    - Kepler-1316 b
+    - Kepler-134 b
+    - Kepler-142 c
+    - Kepler-146 b
+    - Kepler-146 c
+    - Kepler-1487 c
+    - Kepler-150 f
+    - Kepler-1514 b
+    - Kepler-1515 b
+    - Kepler-1519 b
+    - Kepler-1533 b
+    - Kepler-1580 b
+    - Kepler-1625 b
+    - Kepler-1636 b
+    - Kepler-1638 b
+    - Kepler-164 c
+    - Kepler-164 d
+    - Kepler-1654 b
+    - Kepler-1704 b
+    - Kepler-1708 b
+    - Kepler-1801 c
+    - Kepler-188 c
+    - Kepler-1880 b
+    - Kepler-1979 b
+    - Kepler-1981 b
+    - Kepler-1993 b
+    - Kepler-1995 b
+    - Kepler-201 b
+    - Kepler-201 c
+    - Kepler-204 b
+    - Kepler-264 c
+    - Kepler-27 b
+    - Kepler-27 c
+    - Kepler-278 b
+    - Kepler-278 c
+    - Kepler-297 d
+    - Kepler-302 b
+    - Kepler-318 c
+    - Kepler-321 c
+    - Kepler-39 b
+    - Kepler-391 b
+    - Kepler-391 c
+    - Kepler-409 b
+    - Kepler-419 b
+    - Kepler-421 b
+    - Kepler-427 b
+    - Kepler-432 b
+    - Kepler-435 b
+    - Kepler-439 b
+    - Kepler-441 b
+    - Kepler-442 b
+    - Kepler-443 b
+    - Kepler-460 c
+    - Kepler-468 b
+    - Kepler-47 d
+    - Kepler-471 b
+    - Kepler-485 b
+    - Kepler-493 b
+    - Kepler-511 b
+    - Kepler-553 c
+    - Kepler-56 b
+    - Kepler-56 c
+    - Kepler-62 e
+    - Kepler-62 f
+    - Kepler-69 c
+    - Kepler-731 b
+    - Kepler-75 b
+    - Kepler-815 b
+    - Kepler-84 e
+    - Kepler-849 b
+    - Kepler-896 b
+    - Kepler-91 b
+    - Kepler-950 b
+    - MASCARA-1 b
+    - PDS 70 b
+    - PH2 b
+    - Ross 458 c
+    - SPECULOOS-3 b
+    - SWEEPS-11 b
+    - TIC 237913194 b
+    - TIC 241249530 b
+    - TIC 365102760 b
+    - TIC 393818343 b
+    - TIC 4672985 b
+    - TOI-1278 b
+    - TOI-1431 b
+    - TOI-1670 b
+    - TOI-1859 b
+    - TOI-1994 b
+    - TOI-2005 b
+    - TOI-2109 b
+    - TOI-2134 c
+    - TOI-2180 b
+    - TOI-2337 b
+    - TOI-2338 b
+    - TOI-2373 b
+    - TOI-2589 b
+    - TOI-2669 b
+    - TOI-3362 b
+    - TOI-4127 b
+    - TOI-4377 b
+    - TOI-4551 b
+    - TOI-4582 b
+    - TOI-4600 c
+    - TOI-4603 b
+    - TOI-5110 b
+    - TOI-5261 b
+    - TOI-5882 b
+    - TOI-6330 b
+    - TOI-6628 b
+    - TOI-7041 b
+    - TOI-712 b
+    - TOI-904 c
+    - TOI-912 b
+    - TRAPPIST-1 b
+    - TRAPPIST-1 c
+    - TRAPPIST-1 d
+    - TRAPPIST-1 e
+    - TRAPPIST-1 f
+    - TRAPPIST-1 g
+    - TRAPPIST-1 h
+    - TYC 8998-760-1 c
+    - V2376 Ori b
+    - VHS J125601.92-125723.9 b
+    - WASP-140 b
+    - WASP-167 b
+    - WASP-17 b
+    - WASP-18 b
+    - WASP-189 b
+    - WASP-33 b
+    - WASP-72 b
+    - WASP-73 b
+    - WD 1856+534 b
+    - WISEP J121756.91+162640.2 A b
+    - XO-3 b
+    - ZTF J1230-2655 b
+    - ZTF J1828+2308 b
+
+Clustering on 4322 planets (207 extreme outliers held out)
+
+K_FINAL = 5
+  -> Plot 9 saved: Elbow + Silhouette (k=5)
+
+Cluster sizes after fix: {0: 548, 1: 1421, 2: 976, 3: 550, 4: 1034}
+Min cluster size: 548
+
+K-Means Cluster Statistics (key features):
+            pl_rade   pl_eqt  pl_insol  pl_bmasse  st_teff
+km_cluster                                                
+0             14.83  1601.65   1407.78     805.63  6093.58
+1              2.91   783.01    202.19      55.34  5250.82
+2              3.19   995.17    412.30      73.46  6033.72
+3              2.82   646.28     41.16     150.17  3748.97
+4              3.12  1226.34    734.44      58.35  5554.96
+
+Target planet cluster vote counts: {1: 4, 2: 1, 3: 15}
+
+Most Earth-like K-Means cluster: 3
+
+Interpretation:
+Cluster 3 represents Earth-like planets (based on radius, temperature, insolation)
+  Centroid: R=2.82  T=646.3K
+
+Target planet cluster assignments (K-Means):
+  * LP 890-9 c                 cluster=3  R=1.37  T=272.0K
+  * Gliese 12 b                cluster=3  R=0.96  T=314.6K
+  * K2-3 d                     cluster=3  R=1.46  T=305.2K
+  * Kepler-1652 b              cluster=3  R=1.60  T=268.0K
+  * Kepler-1649 c              cluster=3  R=1.06  T=234.0K
+  * TOI-2095 c                 cluster=3  R=1.33  T=297.0K
+    Kepler-1653 b              cluster=1  R=2.17  T=284.0K
+  * TOI-715 b                  cluster=3  R=1.55  T=234.0K
+  * K2-133 e                   cluster=3  R=1.73  T=296.0K
+  * TOI-6002 b                 cluster=3  R=1.65  T=321.4K
+  * TOI-7166 b                 cluster=3  R=2.01  T=249.0K
+  * TOI-4336 A b               cluster=3  R=2.12  T=308.0K
+  * K2-9 b                     cluster=3  R=2.25  T=314.0K
+  * TOI-1452 b                 cluster=3  R=1.67  T=326.0K
+    TOI-712 d                  cluster=1  R=2.47  T=313.6K
+  * LHS 1140 b                 cluster=3  R=1.73  T=226.0K
+    Kepler-1052 c              cluster=1  R=2.30  T=302.0K
+    Kepler-22 b                cluster=1  R=2.10  T=279.0K
+    Kepler-452 b               cluster=2  R=1.63  T=265.0K
+  * Kepler-186 f               cluster=3  R=1.17  T=697.4K
+  -> Plot 11 saved: K-Means Cluster Sizes
+
+======================================================================
+SECTION 5: HIERARCHICAL (AGGLOMERATIVE) CLUSTERING
+======================================================================
+PCA for Agglomerative: (4322, 17) → (4322, 10)
+Variance explained: 97.9%
+  -> Plot 13 saved: Dendrogram
+
+AGG CLUSTER COUNTS (PCA-10D + Ward linkage):
+  Cluster 0: 1718 planets
+  Cluster 1: 816 planets
+  Cluster 2: 600 planets
+  Cluster 3: 445 planets
+  Cluster 4: 743 planets
+  Min: 445  |  Max: 1718  |  Ratio: 3.9x
+  ✓ Clusters are reasonably balanced.
+
+Full dataset AGG cluster distribution:
+agg_cluster
+0    1726
+1     843
+2     679
+3     494
+4     787
+
+Most Earth-like Agglomerative cluster: 1
+Cluster distribution:
+agg_cluster
+0    1726
+1     843
+2     679
+3     494
+4     787
+  -> Plot 15 saved: K-Means vs Agglomerative Comparison
+
+======================================================================
+SECTION 6: DBSCAN SUB-CLUSTERING (Earth-like Planets)
+======================================================================
+K-Means clusters selected for DBSCAN: [1, 2, 3]
+Planets in selected clusters: 2947
+
+Target planets in selected clusters:
+  -> Plot 16 saved: k-Distance Graph
+DBSCAN sub-clusters found: 1
+Noise points: 34
+Sub-cluster distribution:
+sub_cluster
+-1      34
+ 0    2913
+  -> Plot 17 saved: DBSCAN Sub-clustering Scatter
+
+======================================================================
+SECTION 7: HABITABILITY SCORING & CANDIDATE FILTERING
+======================================================================
+
+Total habitable candidates: 39
+
+Top 25 candidates:
+      pl_name  pl_rade  pl_eqt  pl_insol  habitability_score
+ Kepler-452 b    1.630   265.0    1.1000                9.24
+  Kepler-22 b    2.100   279.0    1.0130                8.44
+   LP 890-9 c    1.367   272.0    0.9060                8.41
+  Gliese 12 b    0.958   314.6    1.6200                8.39
+Kepler-1649 c    1.060   234.0    0.7500                8.37
+Kepler-1652 b    1.600   268.0    0.8100                8.18
+       K2-3 d    1.458   305.2    1.4400                8.05
+   TOI-2095 c    1.330   297.0    1.8400                7.92
+    TOI-715 b    1.550   234.0    0.6700                7.73
+     K2-133 e    1.730   296.0    1.8000                7.55
+   TOI-6002 b    1.650   321.4    1.6823                7.55
+   TOI-1452 b    1.672   326.0    1.8000                7.33
+Kepler-1653 b    2.170   284.0    0.9800                7.24
+   TOI-7166 b    2.010   249.0    1.0700                7.20
+   LHS 1140 b    1.730   226.0    0.4300                7.11
+  Kepler-69 c    1.710   299.0  123.4020                7.09
+ TOI-4336 A b    2.120   308.0    1.5000                6.80
+ Kepler-311 d    2.050   327.0    2.7100                6.76
+    TOI-712 d    2.474   313.6    1.6000                6.68
+Kepler-1052 c    2.300   302.0    1.9600                6.67
+       K2-9 b    2.250   314.0    1.3600                6.47
+  Kepler-62 e    1.610   270.0   19.4100                6.41
+   TOI-2095 b    1.250   347.0    3.4300                6.23
+ Kepler-186 f    1.170   697.4    0.3000                6.11
+ Kepler-138 d    1.510   345.0    3.4000                6.08
+
+Habitability Score Stats:
+  Max:    9.24
+  Median: 6.67
+  Mean:   6.46
+
+=== TARGET PLANET RECOVERY ===
+Recovered 20/20 target planets:
+  * LP 890-9 c                 score=8.41  R=1.37  T=272.0K  I=0.906
+  * Gliese 12 b                score=8.39  R=0.96  T=314.6K  I=1.620
+  * K2-3 d                     score=8.05  R=1.46  T=305.2K  I=1.440
+  * Kepler-1652 b              score=8.18  R=1.60  T=268.0K  I=0.810
+  * Kepler-1649 c              score=8.37  R=1.06  T=234.0K  I=0.750
+  * TOI-2095 c                 score=7.92  R=1.33  T=297.0K  I=1.840
+  * Kepler-1653 b              score=7.24  R=2.17  T=284.0K  I=0.980
+  * TOI-715 b                  score=7.73  R=1.55  T=234.0K  I=0.670
+  * K2-133 e                   score=7.55  R=1.73  T=296.0K  I=1.800
+  * TOI-6002 b                 score=7.55  R=1.65  T=321.4K  I=1.682
+  * TOI-7166 b                 score=7.20  R=2.01  T=249.0K  I=1.070
+  * TOI-4336 A b               score=6.80  R=2.12  T=308.0K  I=1.500
+  * K2-9 b                     score=6.47  R=2.25  T=314.0K  I=1.360
+  * TOI-1452 b                 score=7.33  R=1.67  T=326.0K  I=1.800
+  * TOI-712 d                  score=6.68  R=2.47  T=313.6K  I=1.600
+  * LHS 1140 b                 score=7.11  R=1.73  T=226.0K  I=0.430
+  * Kepler-1052 c              score=6.67  R=2.30  T=302.0K  I=1.960
+  * Kepler-22 b                score=8.44  R=2.10  T=279.0K  I=1.013
+  * Kepler-452 b               score=9.24  R=1.63  T=265.0K  I=1.100
+  * Kepler-186 f               score=6.11  R=1.17  T=697.4K  I=0.300
+  -> Plot 18 saved: Habitability Score Distribution + Top 20 Bar
+  -> Plot 19 saved: 3D Habitability Scatter
+  -> Plot 20 saved: Radar Chart (Top 5 Candidates)
+
+======================================================================
+SECTION 8: OUTLIER DETECTION
+======================================================================
+Isolation Forest outliers: 227 (5.0%)
+Z-Score outliers (|z|>3): 75
+  -> Plot 21 saved: Outlier Detection
+
+======================================================================
+SECTION 9: DECISION TREE CLASSIFICATION
+======================================================================
+
+NOTE: Labels = top 10% by habitability_score (all planets).
+Probabilistic boundary — AUC<1.0 expected and correct.
+
+Score cutoff (90th percentile): 5.000
+Class distribution — Habitable: 459 (10.1%), Non-habitable: 4070
+
+Target planets in positive class: 20/20
+  All target planets are in the positive class. ✓
+
+Final — Habitable: 459 (10.1%), Non-habitable: 4070, Ratio ≈ 1:8
+
+SMOTE applied: Counter({0: 3256, 1: 367}) → Counter({0: 3256, 1: 3256})
+
+Decision Tree Classification Report:
+               precision    recall  f1-score   support
+
+Non-Habitable       0.99      0.96      0.97       814
+    Habitable       0.71      0.90      0.79        92
+
+     accuracy                           0.95       906
+    macro avg       0.85      0.93      0.88       906
+ weighted avg       0.96      0.95      0.96       906
+
+  -> Plot 22 saved: Decision Tree
+  -> Plot 23 saved: Feature Importance
+  -> Plot 24 saved: Decision Tree Confusion Matrix
+
+======================================================================
+SECTION 10: NAIVE BAYES CLASSIFICATION
+======================================================================
+SMOTE applied for Naive Bayes: Counter({0: 3256, 1: 367}) → Counter({0: 3256, 1: 3256})
+
+Naive Bayes Classification Report:
+               precision    recall  f1-score   support
+
+Non-Habitable       1.00      0.28      0.43       814
+    Habitable       0.13      0.99      0.24        92
+
+     accuracy                           0.35       906
+    macro avg       0.56      0.63      0.33       906
+ weighted avg       0.91      0.35      0.41       906
+
+  -> Plot 25 saved: Naive Bayes Confusion Matrix
+  -> Plot 26 saved: ROC Curves
+
+======================================================================
+SECTION 11: ASSOCIATION RULE MINING (APRIORI)
+======================================================================
+Total rules: 2574  |  Habitability rules: 309
+
+Top 15 Rules predicting HABITABILITY:
+                    antecedents                        consequents  support  confidence     lift
+             (Warm, Small, Hot)      (Habitable, Neptune, Extreme) 0.020755    0.232673 9.163280
+             (Warm, Small, Hot)               (Habitable, Neptune) 0.020755    0.232673 8.105979
+    (Warm, Small, Hot, Extreme)               (Habitable, Neptune) 0.020755    0.232673 8.105979
+         (Warm, Small, Extreme)          (Hot, Habitable, Neptune) 0.020755    0.193018 7.805185
+    (Warm, Hot, Small, Neptune)               (Habitable, Extreme) 0.020755    0.652778 7.639355
+             (Warm, Small, Hot)               (Habitable, Extreme) 0.055421    0.621287 7.270825
+         (Warm, Small, Neptune)          (Habitable, Hot, Extreme) 0.020755    0.583851 7.244550
+                  (Warm, Small) (Hot, Habitable, Neptune, Extreme) 0.020755    0.173752 7.219488
+(Warm, Small, Neptune, Extreme)                   (Habitable, Hot) 0.020755    0.587500 7.171934
+         (Warm, Small, Neptune)                   (Habitable, Hot) 0.020755    0.583851 7.127388
+    (Warm, Small, Super-E, Hot)               (Habitable, Extreme) 0.033120    0.607287 7.106989
+                  (Warm, Small)          (Hot, Habitable, Neptune) 0.020755    0.173752 7.026109
+                  (Warm, Small)      (Habitable, Neptune, Extreme) 0.020976    0.175601 6.915615
+         (Warm, Small, Neptune)               (Habitable, Extreme) 0.020976    0.590062 6.905404
+             (Warm, Small, Hot)      (Super-E, Habitable, Extreme) 0.033120    0.371287 6.863508
+  -> Plot 27 saved: Apriori Association Rules Scatter
+
+======================================================================
+SECTION 12: FINAL SUMMARY
+======================================================================
+
++----------------------------------------------------------------------+
+|    EXOPLANET HABITABILITY ANALYSIS — FINAL SUMMARY (ALL FIXES)      |
++----------------------------------------------------------------------+
+| Dataset     : NASA Exoplanet Archive (Jan 2026)                      |
+| Features    : 17 (planet + stellar properties)                   |
+| Usable Rows : 4529                                              |
++----------------------------------------------------------------------+
+| ALL FIXES APPLIED                                                    |
+|  1. KMeans k=5: extreme outliers (|z|>4.5) removed before fit  |
+|     -> no singleton clusters; outliers re-attached after clustering  |
+|  2. Agglomerative: runs on SAME clean set as KMeans (core fix)       |
+|     -> all 5 clusters now well-populated; no micro-clusters          |
+|  3. Colormap: vmin/vmax-bounded tab10 on ALL scatter plots           |
+|     -> all 5 clusters show distinct colours in every plot            |
+|  4. Labels: top-10% by habitability_score (~10% positive)         |
+|  5. SMOTE: k_neighbors=5 (459 positives)                          |
+|  6. Apriori: filtered for Habitable as consequent                    |
++----------------------------------------------------------------------+
+| CLUSTERING                                                           |
+|   K-Means (k=5)             : Earth-like cluster = 3               |
+|   Agglomerative (Ward, k=5) : Earth-like cluster = 1               |
+|   DBSCAN (eps=0.6, min=5)  : 1 sub-clusters, 34 noise pts           |
++----------------------------------------------------------------------+
+| HABITABILITY RESULTS                                                 |
+|   Candidates (Section 7)  : 39                                    |
+|   Target planets recovered: 20/20                              |
+|   Top candidate           : Kepler-452 b                   |
+|   Max habitability score  : 9.24                            |
++----------------------------------------------------------------------+
+| PLOTS SAVED (27 total)                                               |
+|  01-08  : EDA and Data Exploration                                   |
+|  09-15  : K-Means and Agglomerative Clustering                       |
+|  16-17  : DBSCAN Sub-Clustering                                      |
+|  18-20  : Habitability Scoring, 3D and Radar                         |
+|  21     : Outlier Detection                                          |
+|  22-26  : Decision Tree, Naive Bayes, ROC                            |
+|  27     : Apriori Association Rules (General + Habitability)         |
++----------------------------------------------------------------------+
+
+sakshamgupta@Jawahars-MacBook-Air-2 csv4 %

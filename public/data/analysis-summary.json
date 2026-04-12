@@ -1,0 +1,435 @@
+{
+  "dataset": {
+    "rawRows": 39251,
+    "defaultFlagRows": 6080,
+    "usableRows": 4529,
+    "featureCount": 17
+  },
+  "paperFindings": {
+    "targetRecovered": "20 / 20",
+    "habitableCandidates": 39,
+    "topCandidate": {
+      "name": "Kepler-452 b",
+      "score": 9.24
+    },
+    "scoreStats": {
+      "max": 9.24,
+      "median": 6.67,
+      "mean": 6.46
+    }
+  },
+  "modelFindings": {
+    "kMeansEarthCluster": 3,
+    "agglomerativeEarthCluster": 1,
+    "dbscanSubclusters": 1,
+    "dbscanNoisePoints": 34,
+    "decisionTree": {
+      "accuracy": 0.95,
+      "habitableRecall": 0.9,
+      "habitablePrecision": 0.71
+    },
+    "naiveBayes": {
+      "accuracy": 0.35,
+      "habitableRecall": 0.99
+    },
+    "associationRules": {
+      "total": 2574,
+      "habitable": 309
+    }
+  },
+  "featureNames": [
+    "pl_rade",
+    "pl_bmasse",
+    "pl_dens",
+    "pl_eqt",
+    "pl_insol",
+    "pl_orbsmax",
+    "pl_orbper",
+    "pl_orbeccen",
+    "pl_trandur",
+    "pl_ratdor",
+    "pl_ratror",
+    "st_teff",
+    "st_rad",
+    "st_mass",
+    "st_met",
+    "st_lum",
+    "st_logg"
+  ],
+  "rowFields": [
+    "pl_name",
+    "pl_rade",
+    "pl_bmasse",
+    "pl_dens",
+    "pl_eqt",
+    "pl_insol",
+    "pl_orbsmax",
+    "pl_orbper",
+    "pl_orbeccen",
+    "pl_trandur",
+    "pl_ratdor",
+    "pl_ratror",
+    "st_teff",
+    "st_rad",
+    "st_mass",
+    "st_met",
+    "st_lum",
+    "st_logg",
+    "km_cluster",
+    "agg_cluster",
+    "is_target",
+    "habitability_score"
+  ],
+  "topCandidates": [
+    {
+      "pl_name": "Kepler-452 b",
+      "pl_rade": 1.63,
+      "pl_eqt": 265.0,
+      "pl_insol": 1.1000000000000796,
+      "habitability_score": 9.24
+    },
+    {
+      "pl_name": "Kepler-22 b",
+      "pl_rade": 2.1,
+      "pl_eqt": 279.0,
+      "pl_insol": 1.0129999999999768,
+      "habitability_score": 8.44
+    },
+    {
+      "pl_name": "LP 890-9 c",
+      "pl_rade": 1.367,
+      "pl_eqt": 272.0,
+      "pl_insol": 0.9060000000000059,
+      "habitability_score": 8.41
+    },
+    {
+      "pl_name": "Gliese 12 b",
+      "pl_rade": 0.9580000000000006,
+      "pl_eqt": 314.6,
+      "pl_insol": 1.6199999999999477,
+      "habitability_score": 8.39
+    },
+    {
+      "pl_name": "Kepler-1649 c",
+      "pl_rade": 1.06,
+      "pl_eqt": 234.0,
+      "pl_insol": 0.75,
+      "habitability_score": 8.37
+    },
+    {
+      "pl_name": "Kepler-1652 b",
+      "pl_rade": 1.6,
+      "pl_eqt": 268.0,
+      "pl_insol": 0.8100000000000023,
+      "habitability_score": 8.18
+    },
+    {
+      "pl_name": "K2-3 d",
+      "pl_rade": 1.4580000000000002,
+      "pl_eqt": 305.20000000000005,
+      "pl_insol": 1.4399999999999409,
+      "habitability_score": 8.05
+    },
+    {
+      "pl_name": "TOI-2095 c",
+      "pl_rade": 1.33,
+      "pl_eqt": 297.0,
+      "pl_insol": 1.839999999999975,
+      "habitability_score": 7.92
+    },
+    {
+      "pl_name": "TOI-715 b",
+      "pl_rade": 1.5499999999999998,
+      "pl_eqt": 234.0,
+      "pl_insol": 0.6700000000000728,
+      "habitability_score": 7.73
+    },
+    {
+      "pl_name": "K2-133 e",
+      "pl_rade": 1.73,
+      "pl_eqt": 296.0,
+      "pl_insol": 1.8000000000000114,
+      "habitability_score": 7.55
+    },
+    {
+      "pl_name": "TOI-6002 b",
+      "pl_rade": 1.65,
+      "pl_eqt": 321.4,
+      "pl_insol": 1.682299999999998,
+      "habitability_score": 7.55
+    },
+    {
+      "pl_name": "TOI-1452 b",
+      "pl_rade": 1.6719999999999997,
+      "pl_eqt": 326.0,
+      "pl_insol": 1.8000000000000114,
+      "habitability_score": 7.33
+    },
+    {
+      "pl_name": "Kepler-1653 b",
+      "pl_rade": 2.17,
+      "pl_eqt": 284.0,
+      "pl_insol": 0.9800000000000182,
+      "habitability_score": 7.24
+    },
+    {
+      "pl_name": "TOI-7166 b",
+      "pl_rade": 2.01,
+      "pl_eqt": 249.0,
+      "pl_insol": 1.0699999999999363,
+      "habitability_score": 7.2
+    },
+    {
+      "pl_name": "LHS 1140 b",
+      "pl_rade": 1.73,
+      "pl_eqt": 226.0,
+      "pl_insol": 0.4300000000000068,
+      "habitability_score": 7.11
+    },
+    {
+      "pl_name": "Kepler-69 c",
+      "pl_rade": 1.71,
+      "pl_eqt": 299.0,
+      "pl_insol": 123.40200000000004,
+      "habitability_score": 7.09
+    },
+    {
+      "pl_name": "TOI-4336 A b",
+      "pl_rade": 2.12,
+      "pl_eqt": 308.0,
+      "pl_insol": 1.4999999999999432,
+      "habitability_score": 6.8
+    },
+    {
+      "pl_name": "Kepler-311 d",
+      "pl_rade": 2.05,
+      "pl_eqt": 327.0,
+      "pl_insol": 2.7099999999999227,
+      "habitability_score": 6.76
+    },
+    {
+      "pl_name": "TOI-712 d",
+      "pl_rade": 2.474,
+      "pl_eqt": 313.6,
+      "pl_insol": 1.6000000000000227,
+      "habitability_score": 6.68
+    },
+    {
+      "pl_name": "Kepler-1052 c",
+      "pl_rade": 2.3,
+      "pl_eqt": 302.0,
+      "pl_insol": 1.9599999999999795,
+      "habitability_score": 6.67
+    },
+    {
+      "pl_name": "K2-9 b",
+      "pl_rade": 2.25,
+      "pl_eqt": 314.0,
+      "pl_insol": 1.3600000000000136,
+      "habitability_score": 6.47
+    },
+    {
+      "pl_name": "Kepler-62 e",
+      "pl_rade": 1.6100000000000003,
+      "pl_eqt": 270.0,
+      "pl_insol": 19.40999999999991,
+      "habitability_score": 6.41
+    },
+    {
+      "pl_name": "TOI-2095 b",
+      "pl_rade": 1.25,
+      "pl_eqt": 347.0,
+      "pl_insol": 3.430000000000007,
+      "habitability_score": 6.23
+    },
+    {
+      "pl_name": "Kepler-186 f",
+      "pl_rade": 1.17,
+      "pl_eqt": 697.4000000000001,
+      "pl_insol": 0.3000000000000682,
+      "habitability_score": 6.11
+    },
+    {
+      "pl_name": "Kepler-138 d",
+      "pl_rade": 1.5099999999999998,
+      "pl_eqt": 345.0,
+      "pl_insol": 3.3999999999999773,
+      "habitability_score": 6.08
+    }
+  ],
+  "targetRecovery": [
+    {
+      "name": "LP 890-9 c",
+      "score": 8.41,
+      "radius": 1.367,
+      "temperature": 272.0,
+      "insolation": 0.906
+    },
+    {
+      "name": "Gliese 12 b",
+      "score": 8.39,
+      "radius": 0.958,
+      "temperature": 314.6,
+      "insolation": 1.62
+    },
+    {
+      "name": "K2-3 d",
+      "score": 8.05,
+      "radius": 1.458,
+      "temperature": 305.2,
+      "insolation": 1.44
+    },
+    {
+      "name": "Kepler-1652 b",
+      "score": 8.18,
+      "radius": 1.6,
+      "temperature": 268.0,
+      "insolation": 0.81
+    },
+    {
+      "name": "Kepler-1649 c",
+      "score": 8.37,
+      "radius": 1.06,
+      "temperature": 234.0,
+      "insolation": 0.75
+    },
+    {
+      "name": "TOI-2095 c",
+      "score": 7.92,
+      "radius": 1.33,
+      "temperature": 297.0,
+      "insolation": 1.84
+    },
+    {
+      "name": "Kepler-1653 b",
+      "score": 7.24,
+      "radius": 2.17,
+      "temperature": 284.0,
+      "insolation": 0.98
+    },
+    {
+      "name": "TOI-715 b",
+      "score": 7.73,
+      "radius": 1.55,
+      "temperature": 234.0,
+      "insolation": 0.67
+    },
+    {
+      "name": "K2-133 e",
+      "score": 7.55,
+      "radius": 1.73,
+      "temperature": 296.0,
+      "insolation": 1.8
+    },
+    {
+      "name": "TOI-6002 b",
+      "score": 7.55,
+      "radius": 1.65,
+      "temperature": 321.4,
+      "insolation": 1.682
+    },
+    {
+      "name": "TOI-7166 b",
+      "score": 7.2,
+      "radius": 2.01,
+      "temperature": 249.0,
+      "insolation": 1.07
+    },
+    {
+      "name": "TOI-4336 A b",
+      "score": 6.8,
+      "radius": 2.12,
+      "temperature": 308.0,
+      "insolation": 1.5
+    },
+    {
+      "name": "K2-9 b",
+      "score": 6.47,
+      "radius": 2.25,
+      "temperature": 314.0,
+      "insolation": 1.36
+    },
+    {
+      "name": "TOI-1452 b",
+      "score": 7.33,
+      "radius": 1.672,
+      "temperature": 326.0,
+      "insolation": 1.8
+    },
+    {
+      "name": "TOI-712 d",
+      "score": 6.68,
+      "radius": 2.474,
+      "temperature": 313.6,
+      "insolation": 1.6
+    },
+    {
+      "name": "LHS 1140 b",
+      "score": 7.11,
+      "radius": 1.73,
+      "temperature": 226.0,
+      "insolation": 0.43
+    },
+    {
+      "name": "Kepler-1052 c",
+      "score": 6.67,
+      "radius": 2.3,
+      "temperature": 302.0,
+      "insolation": 1.96
+    },
+    {
+      "name": "Kepler-22 b",
+      "score": 8.44,
+      "radius": 2.1,
+      "temperature": 279.0,
+      "insolation": 1.013
+    },
+    {
+      "name": "Kepler-452 b",
+      "score": 9.24,
+      "radius": 1.63,
+      "temperature": 265.0,
+      "insolation": 1.1
+    },
+    {
+      "name": "Kepler-186 f",
+      "score": 6.11,
+      "radius": 1.17,
+      "temperature": 697.4,
+      "insolation": 0.3
+    }
+  ],
+  "targetPlanetNames": [
+    "LP 890-9 c",
+    "Gliese 12 b",
+    "K2-3 d",
+    "Kepler-1652 b",
+    "Kepler-1649 c",
+    "TOI-2095 c",
+    "Kepler-1653 b",
+    "TOI-715 b",
+    "K2-133 e",
+    "TOI-6002 b",
+    "TOI-7166 b",
+    "TOI-4336 A b",
+    "K2-9 b",
+    "TOI-1452 b",
+    "TOI-712 d",
+    "LHS 1140 b",
+    "Kepler-1052 c",
+    "Kepler-22 b",
+    "Kepler-452 b",
+    "Kepler-186 f"
+  ],
+  "targetRecovered": "20 / 20",
+  "habitableCandidates": 39,
+  "topCandidate": {
+    "name": "Kepler-452 b",
+    "score": 9.24
+  },
+  "scoreStats": {
+    "max": 9.24,
+    "median": 6.67,
+    "mean": 6.46
+  }
+}
