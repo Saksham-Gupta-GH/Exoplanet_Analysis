@@ -65,7 +65,7 @@ export default function App() {
               setActivePage('similarity');
             }}
           />
-          <main className="bg-google-surface-dim min-h-[calc(100vh-49px)]">
+          <main className="min-h-screen bg-google-surface-dim">
             {activePage === 'about' ? (
               <div className="bg-white">
                 <About key="about" summary={summary} onOpenFigure={setModalFigure} />
@@ -94,11 +94,11 @@ export default function App() {
       {/* Figure modal */}
       {modalFigure ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3 sm:p-4"
           onClick={() => setModalFigure(null)}
         >
           <figure
-            className="relative max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-g-lg bg-white shadow-g-3"
+            className="relative max-h-[92svh] w-full max-w-5xl overflow-hidden rounded-g-lg bg-white shadow-g-3"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -109,8 +109,8 @@ export default function App() {
             >
               <X className="h-4 w-4" />
             </button>
-            <img src={modalFigure.src} alt={modalFigure.title} className="max-h-[72vh] w-full bg-white object-contain" />
-            <figcaption className="border-t border-google-outline p-5">
+            <img src={modalFigure.src} alt={modalFigure.title} className="max-h-[62svh] w-full bg-white object-contain sm:max-h-[72vh]" />
+            <figcaption className="border-t border-google-outline p-4 sm:p-5">
               <strong className="text-base font-medium text-google-text">{modalFigure.title}</strong>
               {modalFigure.caption ? (
                 <p className="mt-1 text-sm text-google-text-secondary">{modalFigure.caption}</p>

@@ -36,6 +36,10 @@
     font: inherit;
   }
 
+  input {
+    min-width: 0;
+  }
+
   button {
     cursor: pointer;
   }
@@ -100,5 +104,25 @@
 
   .prose-research h2:first-child {
     margin-top: 1.2em;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .prose-research {
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    .prose-research h2 {
+      font-size: 1.15rem;
+      margin-top: 2em;
+    }
   }
 }

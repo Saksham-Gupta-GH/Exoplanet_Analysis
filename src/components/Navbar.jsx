@@ -10,12 +10,12 @@ const items = [
 export function Navbar({ activePage, onNavigate, onHome }) {
   return (
     <header className="sticky top-0 z-40 border-b border-google-outline bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-1 px-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         {/* Brand */}
         <button
           type="button"
           onClick={onHome}
-          className="flex items-center gap-2 py-3 text-left"
+          className="flex min-w-0 items-center gap-2 py-3 text-left"
           title="Back to landing page"
         >
           <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-google-blue">
@@ -23,13 +23,13 @@ export function Navbar({ activePage, onNavigate, onHome }) {
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" opacity="0.4" />
             <circle cx="12" cy="12" r="2" fill="currentColor" />
           </svg>
-          <span className="text-lg font-medium text-google-text">
+          <span className="truncate text-base font-medium text-google-text sm:text-lg">
             ExoPlanet Explorer
           </span>
         </button>
 
         {/* Tabs — Google-style underline tabs */}
-        <nav className="flex items-center">
+        <nav className="no-scrollbar flex w-full items-center overflow-x-auto sm:w-auto">
           {items.map((item) => {
             const Icon = item.icon;
             const active = activePage === item.id;
@@ -39,7 +39,7 @@ export function Navbar({ activePage, onNavigate, onHome }) {
                 type="button"
                 onClick={() => onNavigate(item.id)}
                 className={cn(
-                  'relative flex h-12 items-center gap-2 px-4 text-sm font-medium transition-colors',
+                  'relative flex h-11 shrink-0 items-center gap-2 px-3 text-sm font-medium transition-colors sm:h-12 sm:px-4',
                   active
                     ? 'text-google-blue'
                     : 'text-google-text-secondary hover:text-google-text',
@@ -60,7 +60,7 @@ export function Navbar({ activePage, onNavigate, onHome }) {
             type="button"
             onClick={() => onNavigate('about')}
             className={cn(
-              'relative flex h-12 items-center gap-2 px-4 text-sm font-medium transition-colors',
+              'relative flex h-11 shrink-0 items-center gap-2 px-3 text-sm font-medium transition-colors sm:h-12 sm:px-4',
               activePage === 'about'
                 ? 'text-google-blue'
                 : 'text-google-text-secondary hover:text-google-text',
@@ -77,7 +77,7 @@ export function Navbar({ activePage, onNavigate, onHome }) {
             href={RESEARCH_PAPER_LINK}
             target="_blank"
             rel="noreferrer"
-            className="ml-2 flex h-9 items-center gap-2 rounded-full border border-google-outline px-3 text-sm font-medium text-google-blue transition hover:bg-google-blue/10"
+            className="ml-2 flex h-9 shrink-0 items-center gap-2 rounded-full border border-google-outline px-3 text-sm font-medium text-google-blue transition hover:bg-google-blue/10"
           >
             Paper
             <ExternalLink className="h-3.5 w-3.5" />

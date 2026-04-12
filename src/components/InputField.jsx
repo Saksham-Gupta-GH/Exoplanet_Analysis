@@ -25,9 +25,9 @@ export function InputField({
 
   return (
     <label className="group block space-y-1.5">
-      <span className="flex items-center justify-between gap-2">
-        <span className="text-sm font-medium text-google-text">{meta.label}</span>
-        <span className="flex items-center gap-1.5">
+      <span className="flex min-w-0 items-start justify-between gap-2">
+        <span className="min-w-0 text-sm font-medium leading-5 text-google-text">{meta.label}</span>
+        <span className="flex shrink-0 items-center gap-1.5 pt-0.5">
           {meta.unit ? (
             <span className="text-xs text-google-text-tertiary">{meta.unit}</span>
           ) : null}

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { cn } from '../../lib/utils';
 
 const base =
-  'inline-flex items-center justify-center gap-2 font-medium transition-colors duration-150 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-40';
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors duration-150 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-40';
 
 const variants = {
   filled:

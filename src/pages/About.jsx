@@ -7,7 +7,7 @@ import { convertGoogleDocsDownloadLink } from '../lib/appData';
 function PlotFigure({ src, alt, caption, onOpenFigure }) {
   return (
     <figure
-      className="my-6 cursor-pointer overflow-hidden rounded-g-lg border border-google-outline transition hover:shadow-g-1"
+      className="my-5 cursor-pointer overflow-hidden rounded-g-lg border border-google-outline transition hover:shadow-g-1 sm:my-6"
       onClick={() => onOpenFigure?.({ id: alt, src, title: alt, caption: caption || '' })}
     >
       <img src={src} alt={alt} className="w-full object-contain bg-white" loading="lazy" />
@@ -21,7 +21,7 @@ function PlotFigure({ src, alt, caption, onOpenFigure }) {
 }
 
 function PlotRow({ children }) {
-  return <div className="my-6 grid gap-4 sm:grid-cols-2">{children}</div>;
+  return <div className="my-5 grid gap-4 sm:my-6 sm:grid-cols-2">{children}</div>;
 }
 
 function PlotRowItem({ src, alt, caption, onOpenFigure }) {
@@ -77,10 +77,10 @@ export function About({ summary, onOpenFigure }) {
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-3xl px-3 py-6 sm:px-6 sm:py-10 lg:px-8">
       {/* Header */}
-      <header className="border-b border-google-outline pb-8">
-        <h1 className="text-3xl font-medium text-google-text sm:text-4xl">
+      <header className="border-b border-google-outline pb-6 sm:pb-8">
+        <h1 className="text-2xl font-medium text-google-text sm:text-4xl">
           Exoplanet Habitability Analysis
         </h1>
         <p className="mt-2 text-base text-google-text-secondary">
@@ -99,6 +99,7 @@ export function About({ summary, onOpenFigure }) {
           <Button
             onClick={handleDownload}
             disabled={downloadState === 'loading'}
+            className="w-full sm:w-auto"
           >
             {downloadState === 'loading' ? (
               <LoaderCircle className="h-4 w-4 animate-spin" />
