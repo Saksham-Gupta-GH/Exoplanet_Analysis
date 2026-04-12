@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    background: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: #202124;
+    font-family: 'Google Sans', 'Inter', 'Roboto', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  button, input {
+    font: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Google-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #dadce0;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bdc1c6;
+  }
+}
+
+@layer components {
+  /* Google-style number formatting */
+  .number {
+    font-family: 'Google Sans Mono', 'JetBrains Mono', 'Roboto Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Long-form article typography — research paper style */
+  .prose-research {
+    color: #3c4043;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  .prose-research p {
+    margin-bottom: 1.4em;
+  }
+
+  .prose-research strong {
+    color: #202124;
+    font-weight: 500;
+  }
+
+  .prose-research h2 {
+    font-family: 'Google Sans', 'Inter', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: #202124;
+    margin-top: 2.5em;
+    margin-bottom: 0.75em;
+    letter-spacing: 0;
+  }
+
+  .prose-research h2:first-child {
+    margin-top: 1.2em;
+  }
+}
