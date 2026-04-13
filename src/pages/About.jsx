@@ -45,7 +45,7 @@ function PlotRowItem({ src, alt, caption, onOpenFigure }) {
 // <!-- TODO: Replace paperAuthors, paperInstitution with final paper metadata. -->
 // <!-- TODO: Set VITE_RESEARCH_PAPER_URL to https://docs.google.com/document/d/DOC_ID/export?format=pdf when the final Google Doc is ready. -->
 
-const paperAuthors = 'Saksham Gupta';
+const paperAuthors = 'Saksham Gupta • Abhishek Patro • Riddhima Chauhan';
 const paperInstitution = 'Manipal Institute Of Technology';
 const paperYear = '2026';
 
