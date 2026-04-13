@@ -69,7 +69,7 @@ export const FIGURES = [
   },
 ];
 
-export const RESEARCH_PAPER_LINK = 'https://drive.google.com/file/d/1eCSkRGe7b6PZEWs1A0tK00jLGcB3kKXt/view?usp=sharing';
+export const RESEARCH_PAPER_LINK = 'https://drive.google.com/file/d/1qxe-htz5g_zUmqkNCygOwaLE6yGxM4Eu/view?usp=sharing';
 
 export const PAPER_HIGHLIGHTS = [
   { label: 'Usable rows', value: '4,529' },
